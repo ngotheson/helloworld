@@ -1,0 +1,78 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+#define ROW 10
+#define COL 10
+using namespace std;
+
+void nhapMang(int arr[][COL], int &n, int &m)
+{
+	srand(time(NULL));
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
+	}
+}
+
+void xuatMang(int arr[][COL], int n, int m)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cout << arr[i][j]<<"\t";
+		}
+		cout << endl;
+	}
+}
+
+int tongDong(int arr[][COL], int n, int d)
+{
+	int sum(0);
+	for (int j = 0; j < n; j++)
+	{
+		sum += arr[d][j];
+	}
+	return sum;
+}
+
+int tongCot(int arr[][COL], int n, int c)
+{
+	int sum(0);
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i][c];
+	}
+	return sum;
+}
+int main()
+{
+	int a[ROW][COL];
+	int row;
+	cout << "nhap so hang" << endl;
+	cin >> row;
+
+	int col;
+	cout << "nhap so cot" << endl;
+	cin >> col;
+	nhapMang(a,row,col);
+	xuatMang(a, row, col);
+	int x;
+	cout << "nhap vao dong can tinh: ";
+	cin >> x;
+	int sum = tongDong(a, col, x);
+	cout << "tong la: " << sum << endl;
+
+	int c;
+	cout << "nhap vao cot can tinh: ";
+	cin >> c;
+	int sum1 = tongCot(a, row, c);
+	cout << "tong cot la: " << sum1 << endl;
+
+
+	system("pause");
+	return 0;
+}
