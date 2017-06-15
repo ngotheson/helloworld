@@ -1,0 +1,23 @@
+#include <iostream>
+#include<time.h>
+#define _CRT_SECURE_NO_WARNINGS
+using namespace std;
+
+int main()
+{
+	int nNamSinh(0);
+	int nYear(2017);
+	cout << "nhap nam sinh cua ban: ";
+	cin >> nNamSinh;
+
+	//lấy thời gian thực của hệ thống
+	time_t Time = time(NULL);
+	tm * Now = localtime(&Time);
+
+	nYear = Now->tm_year + 1900;
+
+	cout << "so tuoi cua ban la: " << nYear - nNamSinh << endl;
+
+	system("pause");
+	return 0;
+}
