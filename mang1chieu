@@ -115,6 +115,7 @@ int main()
 	cout << "vi tri can xoa: ";
 	int idx1;
 	cin >> idx1;
+	cout<<"ngo the son";
 	xoaGiaTri(myArray, nSize, idx1);
 	
 	xuatMang(myArray, nSize);
