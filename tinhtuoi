@@ -17,6 +17,7 @@ int main()
 	nYear = Now->tm_year + 1900;
 
 	cout << "so tuoi cua ban la: " << nYear - nNamSinh << endl;
+	cout<<"ngo the son";
 
 	system("pause");
 	return 0;
