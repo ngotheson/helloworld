@@ -72,6 +72,8 @@ int main()
 	int sum1 = tongCot(a, row, c);
 	cout << "tong cot la: " << sum1 << endl;
 
+	cout<<"ngo the son";
+
 
 	system("pause");
 	return 0;
